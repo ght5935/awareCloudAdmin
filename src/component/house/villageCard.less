@@ -1,0 +1,137 @@
+.col{
+    box-sizing: border-box;
+    padding: 10px;
+}
+.card{
+    position: relative;
+    width: 100%;
+    border: 1px solid #F3F3F3;
+    box-shadow: 0 1px 2px 0 rgba(154,154,154,0.50);
+    transition: .3s;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    animation: initCard .3s .3s 1 forwards;
+}
+@keyframes initCard{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.card:hover{
+    box-shadow: 0 1px 2px 0 rgba(154,154,154,0.90);
+    & .add{
+        color: rgba(154,154,154,0.90);
+    }  
+}
+.content{
+    // position: absolute;
+    // top:50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    padding-bottom:10px;
+}
+.label{
+    margin-top: 12px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.orgName{
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    font-size: 13px;
+    color: #333333;
+    margin-top: 12px;
+    overflow: hidden;
+    white-space:nowrap;  
+    text-overflow:ellipsis;
+}
+.orgName:nth-of-type(2){
+    width: 111px;
+    height: 32px;
+    line-height: 32px;
+}
+.orgName:nth-of-type(4){
+    width: 111px;
+    height: 26px;
+    margin: 0;
+    margin-top:18px 
+}
+.mask{
+    display: none;
+    position: absolute;
+}
+.maskIconContain{
+    position: absolute;
+    width: 98%;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%)
+}
+.maskIconContain img{
+    cursor: pointer;
+    opacity: .8;
+}
+.maskIconContain img:hover{
+    opacity: 1;
+}
+.maskIconContain img:nth-of-type(1){
+    margin-right: 16px; 
+}
+.maskActive{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 113, 255, 0.85);
+}
+.animTop{
+    animation: maskTop .4s 1;
+}
+.animRight{
+    animation: maskRight .4s 1;
+}
+.animBottom {
+    animation: maskBottom .4s 1;
+}
+.animLeft{
+    animation: maskLeft .4s 1;
+}
+
+@keyframes maskTop{
+    from{top: -100%;}
+    to{top: 0}
+}
+@keyframes maskRight{
+    from{right: -100%;}
+    to{right: 0}
+}
+@keyframes maskBottom{
+    from{bottom: -100%;}
+    to{bottom: 0}
+}
+@keyframes maskLeft{
+    from{left: -100%;}
+    to{left: 0}
+}
+
+.add{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #dadada;
+    transition: .4s;
+}
+.content{
+    :global(.ant-upload.ant-upload-select-picture-card){
+        margin-right: 0;
+        margin-bottom: 0;
+        border:none;
+        border-bottom: 1px solid #dadada;
+    }
+}
+.uploadedImg{
+    height: 153px;
+}

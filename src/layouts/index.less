@@ -1,0 +1,75 @@
+.mainLayout{
+  width: 100%;
+  height: 100%;
+}
+.header, .content{
+  width: 1354px;
+  height: 100%;
+  margin: 0 auto;
+}
+.content{
+  height: calc(100% - 64px);
+}
+.logo{
+  float: left;
+}
+.signOut{
+  float: right;
+}
+.signOut:hover{
+  cursor: pointer;
+}
+
+.signOut img{
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+.userName{
+  color: #fff;
+  font-size: 12px;
+  padding-left: 11px;
+}
+.menuIcon{
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.menuText{
+  display: inline-block;
+  vertical-align: middle;
+}
+:global(.ant-layout){
+  background: rgba(0,0,0,0)
+}
+:global(.ant-layout-header){
+  background: transparent;
+}
+:global(.ant-menu){
+  background: rgba(0,0,0,0);
+  user-select: none;
+}
+:global(.ant-menu-inline){
+  border-right: none;
+}
+:global(.ant-menu-submenu > .ant-menu){
+  background: rgba(0,0,0,0)
+}
+:global(.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected){
+  background: #3F7BFE;
+  border-radius: 5px;
+  color: #fff;
+}
+:global(.ant-menu-inline .ant-menu-item:after){
+  border: none;
+}
+
+:global(.ant-menu-sub.ant-menu-inline > .ant-menu-item),
+:global(.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title),
+:global(.ant-menu-inline .ant-menu-item),
+:global(.ant-menu-item-selected > a),
+:global(.ant-menu-item > a:focus),
+:global(.ant-menu-item > a), 
+:global(.ant-menu-item > a:hover){
+  color: #fff;
+}

@@ -1,0 +1,324 @@
+1.五实数据
+	接口名:/cloudHome/getActually.do    
+	method:get
+	参数:无
+	返回结果:
+		{
+  "status": 0,
+  "message": "操作成功",
+  "result": {
+    "personTotal": 2,
+    "houseTotal": 3,
+    "carTotal": 2,
+    "phoneTotal":0,			   --手机
+    "facilitiesTotal": 0,      --消防
+    "securityTotal": 0         --安防
+  }
+}
+
+2.首页各类型消防设施统计
+	接口名:/cloudHome/getFacilities.do    
+	method:get
+	参数:无
+	返回结果:
+		{
+  "status": 0,
+  "message": "操作成功",
+  "result": {
+    "fireExtinguisher": 0,   --灭火器
+    "fireHydrant": 5,        --消火栓
+    "fireSensor": 1,		 --火灾感应器
+    "smokeSensor": 0,		 --烟雾传感器
+    "automaticallyOff": 0,	 --自动灭火系统
+    "smokeControl": 1		 防排烟系统
+  }
+}
+
+3.首页各类型安防设施统计
+	接口名:/cloudHome/getSecurity.do    
+	method:get
+	参数:无
+	返回结果:
+		{
+  "status": 0,
+  "message": "操作成功",
+  "result": {
+    "accessControl": 0,			--门禁
+    "camera": 0,				--摄像头
+    "patrolPoint": 0,			--巡更点位
+    "videoIntercom": 0,			--可视对讲
+    "alarm": 0,					--一键警报
+    "faceMonitoring": 0,		--人脸监控系统
+    "carSpot": 0				--车辆识别系统
+  }
+}
+
+4.折线图展示今日不同时间段人脸感知数量
+	接口名:/cloudHome/getTodayFace.do    
+	method:get
+	参数:无
+	返回结果:
+	{
+  "status": 0,
+  "message": "操作成功",
+  "result": [
+    {
+      "time": "2018-08-21 00:00:00",
+      "count": 0
+    },
+    {
+      "time": "2018-08-21 01:00:00",
+      "count": 0
+    },
+    .....
+  ]
+}
+
+5.一周感知统计
+	接口名:cloudHome/getOrgWeek.do 
+	method:get
+	参数:无
+	返回结果:
+	{
+  "status": 0,
+  "message": "操作成功",
+  "result": [
+    {
+      "orgId": 33,
+      "name": "美岸栖庭(北区)",
+      "count": 5
+    },
+    {
+      "orgId": 34,
+      "name": "美岸栖庭(南区)",
+      "count": 5
+    }
+  ]
+}
+
+
+
+实有人口-地图-接口
+1.各社区人口统计接口
+	接口名:poi/getMapOrgCount.do
+	method:get
+	参数:无
+	返回结果:
+	{
+  "status": 0,
+  "message": "操作成功",
+  "result": [
+    {
+      "id": 33,
+      "name": "美岸栖庭(北区)",
+      "count": 1
+    },
+    {
+      "id": 34,
+      "name": "美岸栖庭(南区)",
+      "count": 1
+    }
+  ]
+}
+
+2.人口标签人口统计接口
+	接口名:poi/getMapTagCount.do
+	method:get
+	参数:无
+	返回结果:
+	{
+  "status": 0,
+  "message": "操作成功",
+  "result": [
+    {
+      "id": 1,
+      "name": "两劳释放人员",
+      "count": 1
+    },
+    {
+      "id": 3,
+      "name": "视线对象",
+      "count": 1
+    },
+    {
+      "id": 2,
+      "name": "涉赌人员",
+      "count": 0
+    },
+    {
+      "id": 4,
+      "name": "独居老人",
+      "count": 0
+    },
+    {
+      "id": 5,
+      "name": "精神病人",
+      "count": 0
+    },
+    {
+      "id": 6,
+      "name": "楼组长",
+      "count": 0
+    }
+  ]
+}
+
+3.今日感知增量和人脸识别总量接口
+	接口名:poi/getMapOrgPerceiveAndFace.do
+	method:get
+	参数:无
+	返回结果:
+	{
+  "status": 0,
+  "message": "操作成功",
+  "result": {
+    "faceTotal": 2,
+    "perceiveData": [
+      {
+        "orgId": 33,
+        "name": "美岸栖庭(北区)",
+        "count": 0
+      },
+      {
+        "orgId": 34,
+        "name": "美岸栖庭(南区)",
+        "count": 0
+      }
+    ]
+  }
+}
+
+4.人脸识别感知实时统计请复用首页的接口
+
+5.获取人员地图搜索接口
+	接口名:poi/getMapSearch.do
+	method:get
+	参数:
+		name:""
+		idCard:""
+		gender:0   0-女 1-男
+		carCount:1   	 车辆信息 
+		nation:1   民族
+		tag:1      标签
+		partisanId：1  党派
+		marital_status:1   婚姻状况(0-未婚，1-已婚，2-离婚，3-丧偶)
+		census:1           户籍(0-户籍人员,1-外地人员,2-境外人员)
+		phone:""
+		orgunitId:1        所属社区,不传为全部
+	返回结果:数据太多,自己用postman查看
+
+6.获取所有的民族
+	接口名:nation/getAllNation.do
+	method:get
+	参数:无
+	返回结果:数据太多,自己用postman查看
+
+7.获取所有的标签
+	接口名:tag/getAllTag.do
+	method:get
+	参数:无
+	返回结果:数据太多,自己用postman查看
+8.获取所有的党派
+	接口名:partisan/getAllPartisan.do
+	method:get
+	参数:无
+	返回结果:数据太多,自己用postman查看
+
+9.获取人员图表
+	接口名:poi/getPersonChartByOrgId.do
+	method:get
+	参数:orgunitId:33     --社区
+	返回结果:数据太多,自己用postman查看
+
+
+10.获取人员图表标签
+	接口名:poi/getPersonTagChartByOrgId.do
+	method:get
+	参数:orgunitId:33     --社区
+	返回结果:数据太多,自己用postman查看
+
+11.获取所有的小区
+	接口名:org/getAllVillage.do
+	method:get
+	参数:无
+	返回结果:数据太多,自己用postman查看
+
+
+12.获取一人一档-人员信息
+	接口名:poi/getPersonDetailById.do
+	method:get
+	参数:id:1     --人员id
+	返回结果:数据太多,自己用postman查看
+
+13.获取一人一档-人脸轨迹信息
+	接口名:poi/getPersonFacePerveiceById.do
+	method:get
+	参数:id:1     --人员id
+	返回结果:数据太多,自己用postman查看
+14.获取一人一档-门禁信息
+	接口名:poi/getPersonAccessControlById.do
+	method:get
+	参数:id:1     --人员id
+	返回结果:
+		{
+  "status": 0,
+  "message": "操作成功",
+  "result": [
+    {
+      "id": 0,
+      "type": "门禁感知",
+      "msg": null,
+      "perceptionTime": "2018-08-20 17:32:38",
+      "handleTime": null,
+      "name": "门禁摄像头",
+      "process": null,
+      "inOut": 1,    --出入口（0-未知,1-进，2-出）
+      "gmtCreate": null,
+      "gmtModified": null,
+      "orgunitData": null
+    }
+  ]
+}
+15.获取一人一档-车辆信息
+	接口名:poi/getCarInfoByPersonId.do
+	method:get
+	参数:id:1     --人员id
+	返回结果:数据太多,自己用postman查看
+16.获取一人一档-房屋信息
+	接口名:poi/getHouseInfoByPersonId.do
+	method:get
+	参数:id:1     --人员id
+	返回结果:数据太多,自己用postman查看
+
+17.获取用户登录信息生成展示日志(用户必须登录)
+  接口名:poi/getUserInfo.do
+  method:get
+  参数:无
+  返回结果:
+    time:时间
+    userName:用户名
+    policeNumber:警员编号，可能为空
+
+
+管理后台接口
+
+url：http://192.168.1.218:8090/awareCloudAdmin/
+
+1.人员列表分页
+  接口名:poi/list.do
+  method:get
+  参数:
+      pageSize:10
+      pageNo:1
+      name:""
+      idCard:""
+      gender:1
+      carCount:2
+      nation:1
+      tag:1
+      partisanId:1            -- 党派
+      marital_status:1        --婚姻状况    
+      census：1               --户籍
+      phone:""
+      orgunitId:33 
+  返回结果:数据太多,自己用postman查看

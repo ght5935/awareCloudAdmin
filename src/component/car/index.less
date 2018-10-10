@@ -1,0 +1,80 @@
+.modalWrapper{
+    :global(.ant-form-explain){
+        display: none;
+    }
+    :global(.ant-form-item){
+        margin-bottom: 8px;
+    }
+    :global(.ant-upload.ant-upload-select-picture-card){
+        width: 155px;
+        height: 155px;
+    }
+    :global(.ant-btn){
+        height: 24px;
+        border-radius: 14px;
+        padding: 0 40px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    
+}
+.submitBtn{
+    :global(.ant-btn){
+        height: 42px;
+        border-radius: 5px;
+        padding: 0 20px;
+        font-size: 18px;
+        margin-top: 0px;
+    }
+
+}
+.uploadText::before{
+    display: inline-block;
+    margin-right: 4px;
+    content: "*";
+    font-family: SimSun;
+    line-height: 1;
+    font-size: 14px;
+    color: #f5222d;
+}
+.uploadBtn{
+    width: 155px;
+    height: 155px;
+}
+.uploadedImg{
+    height: 153px;
+    max-width: 300px;
+}
+.upload{
+    :global(.ant-upload-list-picture .ant-upload-list-item){
+        width: 30%;
+        float: left;
+        margin-right: 20px;
+    }
+}
+.houseContent{
+    max-height: 300px;
+    overflow-y: auto;
+    :global(.ant-row){
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+}
+.deleteBtn{
+    color: #e8e8e8;
+    transition: .3s;
+    cursor: pointer;
+}
+.deleteBtn:hover{
+    color: #ccc
+}
+.personTags{
+    :global(.ant-radio-button-wrapper){
+      border-radius: 3px;
+      text-align: center;
+      margin-right: 7px; 
+      background: #D8D8D8;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
