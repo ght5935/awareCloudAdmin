@@ -101,4 +101,5 @@ export const poiDelete = `${API_PREFIX}/poi/delete.do`;
 export const poiModify = `${API_PREFIX}/poi/modify.do`;
     // 车辆
 
+// 消防设施
 

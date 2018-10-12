@@ -10,10 +10,9 @@ import logo from '../assets/logo.png';
 import user from '../assets/user.png';
 import userIcon from '../assets/userIcon.png';
 import houseIcon from '../assets/houseIcon.png';
-
 import carIcon from '../assets/carIcon.png';
-
-
+import fireIcon from '../component/fire/fireIcon.svg';
+import securityIcon from '../component/security/securityIcon.svg';
 
 
 const { SubMenu } = Menu;
@@ -97,7 +96,7 @@ class BasicLayout extends React.Component {
                     content={this.renderSignOut()}
                     onMouseEnter={this.onSignOutHover}
                     onMouseLeave={this.onSignOutLeave}>
-                    <span className={styles.userName}>admin</span>
+                    <span className={styles.userName}>cuizhanshan</span>
                     <Icon
                       type={'down'}
                       theme="outlined"
@@ -119,6 +118,8 @@ class BasicLayout extends React.Component {
                     <Menu.Item key="index"><Link to="/"><img className={styles.menuIcon} src={userIcon} alt="" /><span className={styles.menuText}>人员管理</span></Link></Menu.Item>
                     <Menu.Item key="house"><Link to="/house"><img className={styles.menuIcon} src={houseIcon} alt="" /><span className={styles.menuText}>房屋管理</span></Link></Menu.Item>
                     <Menu.Item key="car"><Link to="/car"><img className={styles.menuIcon} src={carIcon} alt="" /><span className={styles.menuText}>车辆管理</span></Link></Menu.Item>
+                    <Menu.Item key="fire"><Link to="/fire"><img className={styles.menuIcon} src={fireIcon} alt="" /><span className={styles.menuText}>消防管理</span></Link></Menu.Item>
+                    <Menu.Item key="security"><Link to="/security"><img className={styles.menuIcon} src={securityIcon} alt="" /><span className={styles.menuText}>安防管理</span></Link></Menu.Item>
                   </Menu>
                 </Sider>
                 <Content style={{ paddingLeft: '20px', height: 'calc(100% - 48px)' }}>

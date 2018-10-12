@@ -1,0 +1,98 @@
+
+.card{
+    position: relative;
+    width: 351px;
+    height: 380px;
+    opacity: 0;
+    border: 1px solid #F3F3F3;
+    box-shadow: 0 1px 2px 0 rgba(154,154,154,0.50);
+    transition: .3s;
+    text-align: center;
+    animation: initCard .3s .3s 1 forwards;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+@keyframes initCard{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.picture {
+    width: 100%;
+    height: 300px;
+}
+.TxtLabel {
+    font-size: 20px;
+    color: #525252;
+    letter-spacing: 0;
+}
+.TxtNumber {
+    font-size: 25px;
+    color: #3F7BFE;
+    letter-spacing: 0;
+    display: inline-block;
+    margin: 2px 0 8px 0;
+}
+
+.maskActive{
+    display: block !important;
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 113, 255, 0.85);
+}
+.animTop{
+    animation: maskTop .4s 1;
+}
+.animRight{
+    animation: maskRight .4s 1;
+}
+.animBottom {
+    animation: maskBottom .4s 1;
+}
+.animLeft{
+    animation: maskLeft .4s 1;
+}
+
+@keyframes maskTop{
+    from{top: -100%;}
+    to{top: 0}
+}
+@keyframes maskRight{
+    from{right: -100%;}
+    to{right: 0}
+}
+@keyframes maskBottom{
+    from{bottom: -100%;}
+    to{bottom: 0}
+}
+@keyframes maskLeft{
+    from{left: -100%;}
+    to{left: 0}
+}
+.mask{
+    display: none;
+    position: relative;
+   
+}
+.maskIconContain{
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    line-height: 400px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%)
+}
+.maskIconContain img{
+    cursor: pointer;
+    opacity: .8;
+}
+.maskIconContain img:hover{
+    opacity: 1;
+}
+.maskIconContain img:nth-of-type(1){
+    margin-right: 16px; 
+}
